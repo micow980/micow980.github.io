@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Michael Ly | Data Engineer</title>
-<meta name="description" content="Michael Ly, a data engineer who brings data-driven executives fast, reliable data. AWS, Snowflake, Python.">
+<meta name="description" content="Michael Ly, a data engineer who brings data-driven executives fast, reliable data. Snowflake Cortex AI, Streamlit, AWS, Python.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
@@ -235,6 +235,26 @@
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  #ai .card p{flex:none}
+  #ai .card .tags{margin-top:auto}
+  #ai .tagpills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+  #ai .tagpills span{font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:1px solid var(--mist);border-radius:60px;padding:6px 14px}
+  .pw-item{scroll-margin-top:90px}
+  .toc{margin:40px 0 32px;border:1px solid var(--mist);border-radius:12px;background:#fff;padding:0 24px}
+  .toc-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:16px 0 12px;border-bottom:1px solid var(--mist)}
+  .toc-k{font-family:var(--poppins);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--iris)}
+  .toc-s{font-size:13px;color:var(--slate)}
+  .toc-list{list-style:none}
+  .toc-list li+li{border-top:1px solid var(--mist)}
+  .toc-list a{display:grid;grid-template-columns:34px minmax(0,1.3fr) minmax(0,1.2fr) 190px;align-items:center;gap:12px;padding:12px 0;color:var(--ink);text-decoration:none}
+  .toc-list a:hover .toc-t{color:var(--iris)}
+  .toc-n{font-size:12px;font-weight:500;color:var(--iris)}
+  .toc-t{font-weight:500;font-size:15px}
+  .toc-d{font-size:13px;color:var(--slate)}
+  .toc-bs{display:flex;gap:6px;justify-content:flex-end}
+  .toc-b{font-size:11px;color:var(--ink);background:var(--lavender);border-radius:60px;padding:4px 10px;white-space:nowrap}
+  .toc-b--ai{background:var(--ink);color:#fff}
+  @media (max-width:700px){.toc{padding:0 16px}.toc-list a{grid-template-columns:30px minmax(0,1fr)}.toc-d,.toc-bs{grid-column:2}.toc-bs{justify-content:flex-start}}
 </style>
 </head>
 <body>
@@ -248,13 +268,14 @@
     <a class="brand" href="#top">Michael Ly<b>.</b></a>
     <nav class="nav-links">
       <span class="nav-desktop" style="display:contents">
+        <a class="navlink" href="#ai">AI &amp; Apps</a>
         <a class="navlink" href="#pipeline">Pipeline</a>
         <a class="navlink" href="#work">Work</a>
         <a class="navlink" href="#experience">Experience</a>
         <a class="navlink" href="#stack">Stack</a>
       </span>
       <span class="soc-row nav-desktop"><a class="soc-ic" href="https://www.linkedin.com/in/micow980/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a class="soc-ic" href="https://github.com/micow980/kimball_inmon_project/tree/main" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a class="soc-ic" href="https://medium.com/@micowly" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span>
-      <a class="btn btn-accent" href="Michael-Ly-Resume.docx" download style="padding:10px 20px;font-size:14px">Download Resume</a>
+      <a class="btn btn-accent" href="Michael-Ly-Resume.pdf" download style="padding:10px 20px;font-size:14px">Download Resume</a>
     </nav>
   </div>
 </header>
@@ -263,11 +284,11 @@
 
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">Data Engineer &middot; Seattle, WA</span>
+      <span class="eyebrow">Data Engineer &middot; Snowflake AI &amp; Streamlit &middot; Seattle, WA</span>
       <h1 class="display">Fast, <span class="orchid">reliable</span> data for data-driven executives.</h1>
       <p class="sub">You know what data can do for your company. You just don't know who to start with. That's me.</p>
-      <p class="sub" style="font-family:var(--poppins);color:var(--slate);font-size:16px">I build the data platforms companies run on, from the first pipeline to reliable, self-serve reporting, with deep experience in healthcare and other regulated, data-heavy industries.</p>
-      <div class="tagpills"><span>AWS</span><span>Snowflake</span><span>Python</span><span>SQL</span></div>
+      <p class="sub" style="font-family:var(--poppins);color:var(--slate);font-size:16px">I build the data platforms companies run on, from the first pipeline to reliable, self-serve reporting, with deep experience in healthcare and other regulated, data-heavy industries. I also build Snowflake Cortex AI and Streamlit tools that prep and ship data with a human in the loop.</p>
+      <div class="tagpills"><span>Snowflake</span><span>Cortex AI</span><span>Streamlit</span><span>AWS</span><span>Python</span><span>SQL</span></div>
       <div class="hero-cta">
         <a class="btn btn-dark" href="#work">See my work</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
@@ -287,6 +308,60 @@
         <div class="stat"><div class="n"><em>2M+</em></div><div class="l">Records engineered</div></div>
         <div class="stat"><div class="n">100%</div><div class="l">Reversible, audited operations</div></div>
         <div class="stat"><div class="n">7</div><div class="l">Production tools shipped</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Snowflake AI &amp; Apps</span>
+        <h2 class="sec-h">AI-assisted data prep, with a <span class="orchid">human in the loop</span>.</h2>
+        <p class="sec-lede">Six production Streamlit-in-Snowflake apps, used regularly by data and implementation teams. Snowflake Cortex AI takes the slow, error-prone drafting, and people stay in control of what ships.</p>
+      </div>
+      <div class="grid cards reveal">
+        <div class="card">
+          <span class="k">01 &middot; Build and fix views</span>
+          <h3>Cortex AI drafts the SQL, people approve</h3>
+          <p><b>Onboarding SQL generator.</b> Cortex AI classifies column types and drafts the view DDL from an incoming file, behind a mandatory human-review gate.</p>
+          <p><b>Flat-file onboarding app.</b> Stands up a queryable view from a flat file with similar logic, so analytics can start building reports before a pipeline exists.</p>
+          <p><b>View repair assistant.</b> Evaluates why a view is breaking and which transformations fix it, quickly and accurately.</p>
+          <div class="tags"><span>Cortex AI</span><span>Streamlit in Snowflake</span><span>Human review</span></div>
+        </div>
+        <div class="card">
+          <span class="k">02 &middot; Operate safely</span>
+          <h3>Precision, backups, and visibility</h3>
+          <p><b>Guardrailed delete and restore tool.</b> Precision deletes with backups for restoration, so destructive fixes stay recoverable.</p>
+          <p><b>Pipeline run monitor.</b> A homepage for technical users to see which files, pipelines, and exports ran, with no need to query backend databases.</p>
+          <div class="tags"><span>Streamlit in Snowflake</span><span>Audit logging</span><span>RBAC</span></div>
+        </div>
+        <div class="card">
+          <span class="k">03 &middot; Self-serve for analytics</span>
+          <h3>A homepage for non-technical teams</h3>
+          <p><b>Analytics reference portal.</b> A simpler homepage where analytics and implementation teams find file-format and filename expectations and the transformations applied to each view, so reports line up one to one with Power BI and avoid casting problems.</p>
+          <div class="tags"><span>Streamlit in Snowflake</span><span>Power BI</span><span>Self-serve</span></div>
+        </div>
+      </div>
+      <div class="tagpills reveal" style="margin-top:28px"><span>Human review gate</span><span>Pre/post delta checks</span><span>Role-based access</span><span>Audit logging</span></div>
+      <div class="reveal" style="max-width:760px;margin:56px auto 0;text-align:center">
+        <p style="font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.5;color:var(--ink)">My limiting factor used to be how well I could code. Now it is how well I can <span class="orchid">see the problem</span>, break it into modular pieces, and predict how people will actually use the tool.</p>
+      </div>
+      <div class="grid cards reveal" style="margin-top:32px">
+        <div class="card">
+          <span class="k">For technical teams</span>
+          <h3>Repetitive work, removed</h3>
+          <p>Engineers and analysts get tools that take over hand-written SQL, schema migrations, and manual data checks, so their time goes to design instead of toil.</p>
+        </div>
+        <div class="card">
+          <span class="k">For non-technical teams</span>
+          <h3>Self-serve, with guardrails</h3>
+          <p>Business users get simple apps for common data tasks, with dropdowns, confirmations, and audit trails, so they never need to write SQL or ask whether data loaded.</p>
+        </div>
+        <div class="card">
+          <span class="k">For legacy systems</span>
+          <h3>Replaced without breaking</h3>
+          <p>Brittle manual processes become modular, auditable tools, rolled out so the dashboards and workflows that depend on them keep running.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -317,8 +392,19 @@
         <h2 class="sec-h">The problems I solve, and what I <span class="orchid">built</span> to solve them.</h2>
         <p class="sec-lede">Real problems most data teams recognize, ranked by impact. Click any row to expand it and see what I built.</p>
       </div>
+      <nav class="toc reveal" aria-label="Cortex AI and Streamlit apps">
+        <div class="toc-head"><span class="toc-k">Cortex AI and Streamlit</span><span class="toc-s">6 production apps. Pick one to jump to the problem it solves.</span></div>
+        <ol class="toc-list">
+          <li><a href="#p-ddl"><span class="toc-n">01</span><span class="toc-t">Onboarding SQL generator</span><span class="toc-d">Hand-written source onboarding</span><span class="toc-bs"><span class="toc-b toc-b--ai">Cortex AI</span><span class="toc-b">Streamlit</span></span></a></li>
+          <li><a href="#p-delete"><span class="toc-n">03</span><span class="toc-t">Guardrailed delete and restore tool</span><span class="toc-d">Deletes that cannot be undone</span><span class="toc-bs"><span class="toc-b">Streamlit</span></span></a></li>
+          <li><a href="#p-monitor"><span class="toc-n">04</span><span class="toc-t">Pipeline run monitor</span><span class="toc-d">Not knowing what loaded</span><span class="toc-bs"><span class="toc-b">Streamlit</span></span></a></li>
+          <li><a href="#p-flatfile"><span class="toc-n">08</span><span class="toc-t">Flat-file onboarding app</span><span class="toc-d">Reports blocked by a missing pipeline</span><span class="toc-bs"><span class="toc-b toc-b--ai">Cortex AI</span><span class="toc-b">Streamlit</span></span></a></li>
+          <li><a href="#p-repair"><span class="toc-n">09</span><span class="toc-t">View repair assistant</span><span class="toc-d">Views that break without a clear cause</span><span class="toc-bs"><span class="toc-b toc-b--ai">Cortex AI</span><span class="toc-b">Streamlit</span></span></a></li>
+          <li><a href="#p-portal"><span class="toc-n">10</span><span class="toc-t">Analytics reference portal</span><span class="toc-d">Hard-to-find data rules</span><span class="toc-bs"><span class="toc-b">Streamlit</span></span></a></li>
+        </ol>
+      </nav>
       <div class="pw-list reveal">
-        <details class="pw-item" open>
+        <details class="pw-item" open id="p-ddl">
           <summary>
             <span class="pw-rank">01</span>
             <span class="pw-prob">Onboarding a new data source takes hours of hand-written, error-prone SQL.</span>
@@ -344,7 +430,7 @@
             <div class="pw-tools"><span>Snowflake</span><span>Schemachange</span></div>
           </div>
         </details>
-        <details class="pw-item">
+        <details class="pw-item" id="p-delete">
           <summary>
             <span class="pw-rank">03</span>
             <span class="pw-prob">One wrong DELETE in production is unrecoverable.</span>
@@ -357,7 +443,7 @@
             <div class="pw-tools"><span>Snowflake</span><span>Python</span><span>Streamlit</span></div>
           </div>
         </details>
-        <details class="pw-item">
+        <details class="pw-item" id="p-monitor">
           <summary>
             <span class="pw-rank">04</span>
             <span class="pw-prob">Nobody actually knows whether today's data loaded.</span>
@@ -407,6 +493,45 @@
             <p class="pw-sol">I built content-level duplicate detection by business key with a blame panel that routes each duplicate group to its cause, a re-sent file versus a source-data problem. Read-only by default, with one guarded, backed-up dedupe path.</p>
             <div class="pw-results"><span>Diagnosed in seconds</span><span>Root cause routed automatically</span></div>
             <div class="pw-tools"><span>Snowflake</span><span>Python</span></div>
+          </div>
+        </details>
+        <details class="pw-item" id="p-flatfile">
+          <summary>
+            <span class="pw-rank">08</span>
+            <span class="pw-prob">Analysts wait on a pipeline before they can build a single report.</span>
+            <span class="pw-metric">Reports start sooner</span>
+            <span class="pw-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="pw-body">
+            <p class="pw-sol">I built a flat-file onboarding app that stands up a queryable view straight from the file, using the same AI-assisted logic as the onboarding SQL generator. Analytics can connect and start building reports before a pipeline exists, with a view that is accurate from the start.</p>
+            <div class="pw-results"><span>Reports start before the pipeline</span><span>Quick, accurate views</span></div>
+            <div class="pw-tools"><span>Snowflake</span><span>Cortex AI</span><span>Streamlit</span></div>
+          </div>
+        </details>
+        <details class="pw-item" id="p-repair">
+          <summary>
+            <span class="pw-rank">09</span>
+            <span class="pw-prob">A view breaks and nobody knows why, or what to change.</span>
+            <span class="pw-metric">Quick, accurate fixes</span>
+            <span class="pw-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="pw-body">
+            <p class="pw-sol">I built a view repair assistant that evaluates why a view is breaking and which transformations it needs, then helps treat it quickly and accurately. Cortex AI helps diagnose the cause and propose the fix, so troubleshooting stops being guesswork.</p>
+            <div class="pw-results"><span>Cause found quickly</span><span>Needed transformations identified</span></div>
+            <div class="pw-tools"><span>Snowflake</span><span>Cortex AI</span><span>Streamlit</span></div>
+          </div>
+        </details>
+        <details class="pw-item" id="p-portal">
+          <summary>
+            <span class="pw-rank">10</span>
+            <span class="pw-prob">Analysts and implementation teams can't easily find the rules behind the data.</span>
+            <span class="pw-metric">Self-serve answers</span>
+            <span class="pw-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="pw-body">
+            <p class="pw-sol">I built a simple homepage for non-technical teams that makes the common questions easy to answer: what file format and filename a source expects, and what transformations a view applies. Analysts can line fields up one to one with Power BI and avoid casting problems.</p>
+            <div class="pw-results"><span>Self-serve answers</span><span>One to one with Power BI</span><span>Fewer casting problems</span></div>
+            <div class="pw-tools"><span>Snowflake</span><span>Streamlit</span><span>Power BI</span></div>
           </div>
         </details>
       </div>
@@ -538,7 +663,8 @@
         <p class="contact-direct">michael_ly9800@yahoo.com &middot; (253) 414-3941</p>
         <div class="contact-cta">
           <a class="btn btn-dark" href="mailto:michael_ly9800@yahoo.com">Email me</a>
-          <a class="btn btn-ghost" href="Michael-Ly-Resume.docx" download>Download Resume</a>
+          <a class="btn btn-ghost" href="Michael-Ly-Resume.pdf" download>Download PDF</a>
+          <a class="btn btn-ghost" href="Michael-Ly-Resume.docx" download>Download Word</a>
         </div>
         <div class="soc-row" style="justify-content:center;margin-top:24px"><a class="soc-ic" href="https://www.linkedin.com/in/micow980/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a class="soc-ic" href="https://github.com/micow980/kimball_inmon_project/tree/main" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a class="soc-ic" href="https://medium.com/@micowly" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></div>
       </div>
@@ -566,6 +692,12 @@
 <button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
+  (function(){
+    function openRow(id){var el=document.getElementById(id);if(el&&el.tagName==='DETAILS'){el.open=true;}}
+    document.querySelectorAll('.toc-list a').forEach(function(a){a.addEventListener('click',function(){openRow(a.getAttribute('href').slice(1));});});
+    if(location.hash){openRow(location.hash.slice(1));}
+  })();
+  
   document.getElementById('annX').addEventListener('click',function(){document.body.classList.add('ann-hidden');});
   document.getElementById('totop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
   window.addEventListener('scroll',function(){document.body.classList.toggle('scrolled',window.scrollY>500);},{passive:true});
