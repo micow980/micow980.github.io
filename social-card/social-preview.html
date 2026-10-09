@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Michael Ly social preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap">
+<style>
+  :root{--orchid:#4d8dff;--iris:#2f5ce0;--lavender:#e5edff;--ink:#000;--obsidian:#27272b;--mist:#e4e7ed;--slate:#666;
+    --poppins:'Poppins',system-ui,Segoe UI,Arial,sans-serif;--serif:'Playfair Display',Georgia,serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:627px;overflow:hidden;background:#fff}
+  .card{position:relative;width:1200px;height:627px;display:flex;align-items:center;padding:0 80px 0 76px;font-family:var(--poppins);color:var(--ink);
+    background:linear-gradient(50deg,rgb(247,200,237) 0,rgb(229,236,255) 120px,#fff 420px)}
+  .text{flex:1;padding-right:48px}
+  .brand{position:absolute;top:44px;left:76px;font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .brand b{color:var(--iris)}
+  .eyebrow{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px}
+  h1{font-size:60px;font-weight:500;letter-spacing:-.031em;line-height:1.04;max-width:620px}
+  h1 span{color:var(--orchid)}
+  .sub{font-family:var(--serif);font-size:21px;line-height:1.5;color:var(--slate);max-width:30em;margin-top:24px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;max-width:560px}
+  .pills span{font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--mist);background:#fff;border-radius:60px;padding:6px 14px}
+  .btns{display:flex;gap:12px;margin-top:28px}
+  .btn{font-weight:600;font-size:15px;border-radius:60px;padding:13px 28px;border:1.5px solid transparent}
+  .btn.dark{background:var(--obsidian);color:#fff}
+  .btn.ghost{color:var(--iris);border-color:var(--iris);background:#fff}
+  .photo{position:relative;flex:none;width:360px;height:360px;margin-top:20px}
+  .wash{position:absolute;inset:26px -26px -26px 26px;background:var(--lavender);border-radius:14px}
+  .photo img{position:relative;display:block;width:360px;height:360px;object-fit:cover;object-position:50% 18%;border-radius:14px;border:1px solid var(--mist)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="text">
+      <div class="eyebrow">Data Engineer &middot; Snowflake AI &amp; Streamlit</div>
+      <h1>Fast, <span>reliable</span> data for data-driven executives.</h1>
+      <p class="sub">I build the data platforms companies run on, with Snowflake Cortex AI and Streamlit tools that keep a human in the loop.</p>
+      <div class="pills"><span>Snowflake</span><span>Cortex AI</span><span>Streamlit</span><span>AWS</span><span>Python</span><span>SQL</span></div>
+      <div class="btns"><span class="btn dark">See my work</span><span class="btn ghost">Get in touch</span></div>
+    </div>
+    <div class="photo"><div class="wash"></div><img src="portrait.jpg" alt=""></div>
+  </div>
+</body>
+</html>
